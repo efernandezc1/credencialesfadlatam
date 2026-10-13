@@ -1,0 +1,30 @@
+---
+import Panel from '../ui/Panel.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Icon from '../ui/Icon.astro';
+import { resultadosStats } from '../../data/content';
+---
+
+<Panel id="resultados" class="scene" transition="iris" bgIntensity={4}>
+  <div class="wrap" style="text-align:center">
+    <Eyebrow style="margin-bottom:16px">Resultados</Eyebrow>
+    <h2 class="sech fx-words" style="text-align:center">Impacto generado <span class="grad-pink">en campañas activas</span></h2>
+    <div class="rcards">
+      {resultadosStats.map((stat) => (
+        <div class="rcard rv">
+          <div class="ric"><Icon icon={stat.icon} width={28} /></div>
+          <div
+            class="big counter"
+            data-count={stat.count}
+            data-prefix={stat.prefix}
+            data-suffix={stat.suffix}
+          >
+            {stat.prefix}0{stat.suffix}
+          </div>
+          <div class="dv"></div>
+          <div class="lbl">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Panel>

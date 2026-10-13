@@ -1,0 +1,38 @@
+---
+/**
+ * Menú lateral tipo índice: las 17 secciones.
+ * Aparece solo al pasar el mouse por el borde izquierdo.
+ * Solo el activo muestra línea + nombre en color de marca.
+ */
+import { sceneMenu } from '../data/content';
+import { SCENES } from '../data/scenes';
+
+const items = sceneMenu
+  .map((item) => ({
+    ...item,
+    index: SCENES.findIndex((s) => s.id === item.id),
+  }))
+  .filter((item) => item.index >= 0);
+
+const n = items.length;
+---
+
+<div id="side-nav" aria-label="Navegación de secciones">
+  <nav id="side-menu" style={`--n: ${n}`}>
+    {items.map((item, i) => (
+      <a
+        href={`#${item.id}`}
+        data-idx={item.index}
+        data-id={item.id}
+        data-menu-i={i}
+        class:list={[{ 'is-on': i === 0 }]}
+      >
+        <span class="sm-num" aria-hidden="true">{i + 1}</span>
+        <span class="sm-meta">
+          <span class="sm-dash" aria-hidden="true"></span>
+          <span class="sm-label">{item.label}</span>
+        </span>
+      </a>
+    ))}
+  </nav>
+</div>

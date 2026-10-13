@@ -1,0 +1,26 @@
+---
+import Panel from '../ui/Panel.astro';
+import Icon from '../ui/Icon.astro';
+import { partnersItems } from '../../data/content';
+---
+
+<Panel id="partners" class="scene" transition="slices" bgIntensity={3}>
+  <div class="wrap">
+    <div class="pt-grid">
+      <div>
+        <p class="pt-text fx-words">En nuestro camino de crear y anunciar globalmente, nuestro equipo ha desarrollado habilidades en trazabilidad, productos especializados y soluciones impulsadas por AI: automatización, optimización, análisis de datos y generación estratégica de contenido.</p>
+      </div>
+      <div class="pt-items">
+        {partnersItems.map((item) => (
+          <div class="pt-item rv">
+            <div class="pic"><Icon icon={item.icon} width={26} /></div>
+            <div class="body">
+              <h3>{item.title} <span>{item.span}</span></h3>
+              <p>{item.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Panel>

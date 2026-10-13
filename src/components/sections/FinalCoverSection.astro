@@ -1,0 +1,32 @@
+---
+import Panel from '../ui/Panel.astro';
+import { siteMeta } from '../../data/content';
+---
+
+<Panel id="finalcover" transition="arrival" bgIntensity={2}>
+  <div class="meteors" id="meteors"></div>
+  <div class="spotlights" aria-hidden="true">
+    <div class="foco f1"></div>
+    <div class="foco f2"></div>
+    <div class="foco f3"></div>
+    <div class="beam b1"></div>
+    <div class="beam b2"></div>
+    <div class="beam b3"></div>
+    <div class="beam b4"></div>
+    <div class="beam b5"></div>
+    <div class="beam b6"></div>
+    <div class="beam b7"></div>
+    <div class="beam b8"></div>
+    <div class="beam b9"></div>
+    <div class="beam b10"></div>
+    <div class="beam b11"></div>
+    <div class="beam b12"></div>
+    <div class="beam-flare"></div>
+  </div>
+  <div class="fc-ct">
+    <div class="fc-logo">
+      <img class="logo-img logo-anim" src="/images/logos/fadlatam_logo_full_2.webp" alt="FAD LATAM" width="1514" height="494" decoding="async" />
+    </div>
+  </div>
+  <div class="fc-url" id="contacto">{siteMeta.url}</div>
+</Panel>

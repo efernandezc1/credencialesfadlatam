@@ -1,0 +1,23 @@
+---
+interface Props {
+  icon: string;
+  width?: number | string;
+  height?: number | string;
+  class?: string;
+}
+
+const {
+  icon,
+  width = 28,
+  height = width,
+  class: className = '',
+} = Astro.props;
+---
+
+<iconify-icon
+  icon={icon}
+  width={String(width)}
+  height={String(height)}
+  class:list={['ico', className]}
+  aria-hidden="true"
+></iconify-icon>

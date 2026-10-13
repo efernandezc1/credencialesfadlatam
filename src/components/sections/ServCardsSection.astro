@@ -1,0 +1,39 @@
+---
+import Panel from '../ui/Panel.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import { services } from '../../data/content';
+---
+
+<Panel id="servcards" class="scene" transition="deep" bgIntensity={2}>
+  <div class="wrap sv-wrap">
+    <Eyebrow class="sv-eyebrow">Nuestros servicios</Eyebrow>
+    <div class="sv-rail-wrap">
+      <div class="sv-rail" id="svStage" role="list" data-lenis-prevent>
+        {services.map((service) => (
+          <article class="svcard" role="listitem">
+            <div class="sv-card-inner">
+              <span class="sv-num">{service.n}</span>
+              <h2 class="sv-headline">{service.t}</h2>
+              <p class="sv-lead">{service.d}</p>
+              <ul class="sv-tags">
+                {service.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+      <nav class="sv-dots" id="svDots" aria-label="Navegación de servicios">
+        {services.map((service, i) => (
+          <button
+            type="button"
+            class={`sv-dot${i === 0 ? ' is-on' : ''}`}
+            data-idx={i}
+            aria-label={`Servicio ${service.n}`}
+            aria-current={i === 0 ? 'true' : 'false'}
+          />
+        ))}
+      </nav>
+      <p class="sv-scroll-hint" aria-hidden="true">Desliza horizontalmente</p>
+    </div>
+  </div>
+</Panel>

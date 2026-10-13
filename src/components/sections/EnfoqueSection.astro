@@ -1,0 +1,24 @@
+---
+import Panel from '../ui/Panel.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Icon from '../ui/Icon.astro';
+import { enfoqueCards } from '../../data/content';
+---
+
+<Panel id="enfoque" class="scene" transition="slices" bgIntensity={3}>
+  <div class="wrap">
+    <Eyebrow style="margin-bottom:18px">Nuestro enfoque</Eyebrow>
+    <h2 class="sech fx-words">Creatividad que <span class="grad-pink">conecta</span> · Data que <span class="grad-pink">optimiza</span> · Tecnología que <span class="grad-pink">escala</span> ·</h2>
+    <div class="ecards">
+      {enfoqueCards.map((card) => (
+        <div class="ecard rv">
+          <div class="ecard-head">
+            <div class="cic"><Icon icon={card.icon} width={32} /></div>
+            <h3>{card.title}</h3>
+          </div>
+          <p>{card.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Panel>

@@ -1,0 +1,30 @@
+---
+import Panel from '../ui/Panel.astro';
+import { designThinkingFlow, designSteps } from '../../data/content';
+---
+
+<Panel id="designthinking" class="scene" transition="flip" bgIntensity={2}>
+  <div class="wrap">
+    <h2 class="dt-title">Design <span class="dtk">thinking</span></h2>
+    <div class="dt-bar"></div>
+    <div class="dt-team">Equipo<br><b>Multidisciplinario</b></div>
+    <div class="dt-flow" id="dtFlow">
+      {designThinkingFlow.map(([label, size, isBig]) => (
+        <div
+          class:list={['dt-c', isBig && 'big']}
+          style={`width:${size}px;height:${size}px`}
+        >
+          {label}
+        </div>
+      ))}
+    </div>
+    <div class="dt-steps">
+      {designSteps.map((text, index) => (
+        <div class="dt-step rv">
+          <div class="lbl">STEP #{index + 1}</div>
+          <p>{text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Panel>

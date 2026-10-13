@@ -1,0 +1,17 @@
+---
+import Panel from '../ui/Panel.astro';
+import { casos } from '../../data/content';
+---
+
+<Panel id="casos" class="scene" transition="slices" bgIntensity={2}>
+  <div class="wrap">
+    <div class="num">(08) — Casos de éxito</div>
+    <h2 class="lead fx-words" style="margin:22px 0 30px">Marcas que escalaron con nosotros.</h2>
+    {casos.map((caso) => (
+      <div class="case rv">
+        <h3>{caso.name}</h3>
+        <div class="meta">{caso.meta}</div>
+      </div>
+    ))}
+  </div>
+</Panel>

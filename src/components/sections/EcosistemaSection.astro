@@ -1,0 +1,29 @@
+---
+import Panel from '../ui/Panel.astro';
+import { ecoList, tools } from '../../data/content';
+---
+
+<Panel id="ecosistema" class="scene" transition="warp" bgIntensity={2}>
+  <div class="wrap">
+    <div class="eyebrow2" style="margin-bottom:14px">Ecosistema digital</div>
+    <h2 class="sech fx-words">ECOSISTEMA DIGITAL</h2>
+    <p class="kick">Trabajamos con herramientas que nos permiten:</p>
+    <div class="eco-caps">
+      {ecoList.map((item) => (
+        <article class="eco-cap rv">
+          <span class="eco-cap-n">{item.n}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+    <div class="tools" id="tools">
+      {tools.map((tool) => (
+        <div class="tool">
+          <div class="tile"><img src={tool.icon} alt="" width="40" height="40" decoding="async" /></div>
+          <span>{tool.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</Panel>

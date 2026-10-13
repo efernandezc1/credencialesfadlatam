@@ -1,0 +1,28 @@
+---
+import Panel from '../ui/Panel.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Icon from '../ui/Icon.astro';
+import { generamosCards } from '../../data/content';
+---
+
+<Panel id="generamos" class="scene" transition="flip" bgIntensity={3}>
+  <div class="wrap">
+    <Eyebrow style="margin-bottom:18px">Cómo generamos resultados</Eyebrow>
+    <h2 class="sech fx-words">Integramos <span class="grad-pink">estrategia</span>, contenido y pauta bajo un mismo <span class="grad-pink">sistema.</span></h2>
+    <div class="gcards">
+      {generamosCards.map((card) => (
+        <div class="gcard rv">
+          <div class="top gcard-head">
+            <div class="gcard-title-row">
+              <div class="gn">{card.n}</div>
+              <h3>{card.title}</h3>
+            </div>
+            <div class="gi"><Icon icon={card.icon} width={28} /></div>
+          </div>
+          <div class="dv"></div>
+          <p>{card.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Panel>

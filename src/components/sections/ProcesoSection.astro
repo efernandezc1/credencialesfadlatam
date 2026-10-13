@@ -1,0 +1,31 @@
+---
+import Panel from '../ui/Panel.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+import Icon from '../ui/Icon.astro';
+import { procesoSteps } from '../../data/content';
+---
+
+<Panel id="proceso" class="scene" transition="deep" bgIntensity={3}>
+  <div class="wrap">
+    <Eyebrow style="margin-bottom:18px">Nuestro proceso de trabajo</Eyebrow>
+    <h2 class="sech fx-words">Un modelo ágil y orientado a <span class="grad-pink">resultados.</span></h2>
+    <div class="pcards">
+      {procesoSteps.map((step) => (
+        <div class="pcard rv">
+          <div class="top pcard-head">
+            <div class="pcard-title-row">
+              <div class="pic"><Icon icon={step.icon} width={28} /></div>
+              <h3>{step.title}</h3>
+            </div>
+          </div>
+          <div class="dv"></div>
+          <p>{step.text}</p>
+        </div>
+      ))}
+    </div>
+    <div class="team-bar rv">
+      <div class="tic"><Icon icon="mdi:account-group-outline" width={28} /></div>
+      <p><b>Equipo multidisciplinario:</b> investigamos la marca, formulamos insights, planteamos la propuesta y ejecutamos en sprints.</p>
+    </div>
+  </div>
+</Panel>

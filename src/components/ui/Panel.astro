@@ -1,0 +1,22 @@
+---
+import type { SceneFx } from '../../data/types';
+
+interface Props {
+  id: string;
+  class?: string;
+  transition?: SceneFx;
+  /** Intensidad de partículas de fondo (legacy data-fx numérico) */
+  bgIntensity?: number;
+}
+
+const { id, class: className = '', transition, bgIntensity } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={['panel', className]}
+  data-fx={bgIntensity}
+  data-transition={transition}
+>
+  <slot />
+</section>

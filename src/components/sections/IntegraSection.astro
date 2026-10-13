@@ -1,0 +1,26 @@
+---
+import Panel from '../ui/Panel.astro';
+
+const words = ['ESTRATEGIA', 'CONOCIMIENTO', 'DISEÑO', 'DESARROLLO'];
+---
+
+<Panel id="integra">
+  <div class="eyeimg parallax-soft"></div>
+  <div class="ishapes" id="ishapes"></div>
+  <div class="itrack">
+    <h2 class="ih" aria-label={`En Fusion Digital integramos ${words.join(', ')}`}>
+      <span class="ih-line ih-serif">EN FUSION</span>
+      <span class="ih-line ih-sans">DIGITAL</span>
+      <span class="ih-line ih-serif">INTEGRAMOS</span>
+      <span class="ih-line ih-words" aria-hidden="true">
+        <span class="iword-slot">
+          <span class="iword-track">
+            {words.map((w) => (
+              <span class="iword-item">{w}</span>
+            ))}
+          </span>
+        </span>
+      </span>
+    </h2>
+  </div>
+</Panel>

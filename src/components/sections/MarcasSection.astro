@@ -1,0 +1,20 @@
+---
+import Panel from '../ui/Panel.astro';
+import { brands } from '../../data/content';
+---
+
+<Panel id="marcas" class="scene" transition="curtain" bgIntensity={3}>
+  <div class="wrap mk-head">
+    <h2 class="mk-title">CLIENTES QUE CONFÍAN</h2>
+    <p class="mk-sub">Alianzas que construyen valor, innovación y crecimiento</p>
+  </div>
+  <div class="mk-orbit-stage">
+    <div class="mk-orbit" id="mkOrbit">
+      {brands.map((brand) => (
+        <div class="mk-card">
+          <img src={brand} alt="Cliente" />
+        </div>
+      ))}
+    </div>
+  </div>
+</Panel>

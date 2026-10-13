@@ -1,0 +1,44 @@
+---
+import Panel from '../ui/Panel.astro';
+import Icon from '../ui/Icon.astro';
+import { syncTools } from '../../data/content';
+---
+
+<Panel id="sincronizacion" class="scene" transition="curtain" bgIntensity={3}>
+  <div class="wrap">
+    <div class="sy-grid">
+      <div>
+        <h2 class="sy-title fx-words">Sincronización y visualización de datos en tiempo real</h2>
+        <div class="sy-bar"></div>
+        <p class="sy-text typewriter">Trabajamos con data extraída directamente de las APIs para disminuir los márgenes de error y acceder a información más específica de cada plataforma. Luego la llevamos a paneles de visualización en semi tiempo real.</p>
+        <div class="sy-tools">
+          {syncTools.map((tool) => (
+            <div class="sy-tool rv">
+              <div class="pic"><Icon icon={tool.icon} width={24} /></div>
+              <div>
+                <h4>{tool.title}</h4>
+                <p>{tool.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="dash dash-shot rv">
+        <img
+          src="/images/fusion-digital-workspace-dash.png"
+          alt="Fusion Digital Workspace — panel de cliente con métricas Meta Ads y Google Ads"
+          width="2048"
+          height="960"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </div>
+    <div class="sy-bottom">
+      <div class="it"><b>Data</b> driven marketing — decisiones basadas en datos.</div>
+      <div class="it"><b>Transparencia</b> de inversión — paneles en tiempo real.</div>
+      <div class="it"><b>Best</b> practices — calidad de plataformas publicitarias.</div>
+      <div class="it"><b>Programas</b> para socios — Meta y Google Partner.</div>
+    </div>
+  </div>
+</Panel>

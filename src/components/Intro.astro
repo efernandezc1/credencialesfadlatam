@@ -1,0 +1,41 @@
+---
+import { introPainCards } from '../data/content';
+---
+
+<div id="intro">
+  <div class="layer scene-bg"></div>
+  <div class="layer shapes" id="shapes"></div>
+  <div class="layer panel pain">
+    <h2>Muchas empresas invierten en marketing digital sin claridad sobre qué <span class="grad-pink">genera resultados:</span></h2>
+    <div class="paincards">
+      {introPainCards.map((text) => (
+        <div class="pcard2"><span class="o"></span>{text}</div>
+      ))}
+    </div>
+  </div>
+  <div class="layer panel result">
+    <h2>El resultado: <span class="grad-pink">inversión dispersa y bajo retorno.</span></h2>
+  </div>
+  <div class="layer cover-bg"></div>
+  <div class="layer cover-fx" id="coverFx"></div>
+  <div class="layer cover-ct">
+    <div class="tagline">Marketing diseñado para crecer<br>con data y tecnología</div>
+    <div class="logo">
+      <img class="logo-img logo-anim" src="/images/logos/fadlatam_logo_full_1.webp" alt="FAD LATAM" width="1514" height="494" decoding="async" />
+    </div>
+    <div class="baseline"></div>
+  </div>
+
+  <div id="portal" aria-hidden="true">
+    <video
+      id="intro-video"
+      class="portal-video"
+      src="/video/FAD_LATAM_WordFlash_vf.mp4"
+      playsinline
+      preload="auto"
+      loop
+      muted
+      autoplay
+    ></video>
+  </div>
+</div>

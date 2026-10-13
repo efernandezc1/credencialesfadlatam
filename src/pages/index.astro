@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteChrome from '../components/SiteChrome.astro';
+import Intro from '../components/Intro.astro';
+import Stage from '../components/Stage.astro';
+import ExperienceClient from '../components/ExperienceClient.astro';
+---
+
+<BaseLayout>
+  <SiteChrome />
+
+  <div id="experience">
+    <Intro />
+    <Stage />
+  </div>
+
+  <div id="scroll-driver" aria-hidden="true"></div>
+
+  <ExperienceClient />
+</BaseLayout>
